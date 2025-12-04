@@ -1,63 +1,291 @@
 # Thriftcloud-Streetwear-Shop
-Swing–based thrift shopping marketplace
+ BSIT 2110
+ 
+ Barrio,Mark Joseph R.
+ 
+ De Roma,Josh Andrei A.
+ 
+ Navarro,Ritch B.
+
 
 # Overview
-Thriftcloud Shop is a desktop thrift shopping marketplace built using Java Swing.
-It features a vintage + streetwear catalog, a live featured item image carousel, category
-filtering, a cart system, and an interactive UI for browsing second-hand fashion items.
+This program is a console-based shopping system named ThriftCloud Shop. It allows users to browse items, search products, add items to a cart, remove items, and proceed to checkout. The system uses object-oriented programming concepts and Java's BigDecimal class for accurate price handling.
+
+The application maintains an internal list of products and provides an interactive menu-driven interface that ensures user-friendly navigation and validated inputs.
 
 Users can:
-● Search for thrift items by name
 
-●  Filter items using category buttons (Shirts, Jackets, Pants, Shoes, Accessories)
+View all available products
 
-● Add single or multiple items to the cart
+Search products by name or category
 
-●  View item details on click (image + description + price)
+Add selected items to the cart
 
-●  Checkout and complete a thrift purchase
+View and remove items from the cart
+
+Proceed to checkout and clear their cart
+
+Exit the shop safely
 
 # Project Structure
 
-    📂 ThriftcloudShop/
-     │── ☕ ThriftcloudCoolShop.java/
-     │
-     └── 📂 images/
-        ├── 👕 red_polo.png
-        ├── 👚 white_shirt.png
-        ├── 👕 blue_tshirt.png
-        ├── 🧥 green_hoodie.png
-        ├── 👖 blue_jeans.png
-        ├── 👖 black_chinos.png
-        ├── 👖 grey_sweatpants.png
-        ├── 👖 khaki_pants.png
-        ├── 👟 running_sneakers.png
-        ├── 👟 casual_sneakers.png
-        ├── 🥿 black_loafers.png
-        └── 🥾 brown_boots.png
+    📁 ThriftCloudShop/
+        │── Main.java      
+
+ 
 
 
 
 # How to Run the Program
-1. Open the ThriftcloudShop folder in any Java IDE (VS Code / IntelliJ / NetBeans /
-Eclipse, etc.)
+1.Ensure Java JDK 8+ is installed.
 
- 2.Compile and run:
-   ThriftcloudCoolShop.java
-  
-3. Browse thrift fashion and enjoy the shop UI!
+2.Save your code as Main.java.
+
+3.Open your terminal/command prompt.
+
+4.Navigate to the folder containing Main.java.
+
+5.Compile the program:
 
 
 #  Object-Oriented Principles: 
-Encapsulation –
-Applied through the Item class fields (title, description, price, category, imagePath, and available). These variables are kept inside the class and initialized through the constructor, preventing unauthorized modification from outside. The available field is also controlled internally when checkout happens, ensuring safer data handling.
+ Encapsulation –
+Implemented through the Item class, which groups related data such as title, description, price, and category. These values are packaged inside the class and accessed only through object instances, ensuring organized and secure data handling.
 
- Abstraction –
-The Item class acts as a blueprint that hides implementation details of the shop items. The UI does not need to know how each item stores its data—only that it can retrieve and display it. Methods like the constructor and object usage through .title, .price, and .category abstract the underlying structure.
+Abstraction –
+The program hides complex operations (displaying items, searching, checking out, handling input) behind simple method calls like displayItems(), searchItem(), viewCart(), and checkout(). This allows users to interact with the system without seeing the internal logic.
 
- Inheritance –
-ThriftcloudCoolShop extends JFrame, inheriting all window properties and behaviors such as layout handling, visibility, sizing, and closing operations. This allows the shop to function as a window without rewriting core GUI frame logic.
+Inheritance –
+While the current program does not use class inheritance (no subclasses extend Item), it still follows object-oriented design through the use of well-structured classes. If expanded, categories such as Shirts, Jackets, or Shoes could inherit from a base Item class to reuse and extend functionality.
 
- Polymorphism –
-Different JPanel item cards are created dynamically using new Item(...) objects from the same List<Item>. When shop methods access it.title, it.description, or pass the object to showItemDetail(it), the behavior is determined at runtime depending on the actual item selected or stored, demonstrating runtime polymorphism through shared object handling.
+Polymorphism –
+Although no method overriding is used, the program demonstrates basic polymorphism through object handling: Item objects are stored in lists (items and cart) and processed uniformly. Methods like printCard() accept an Item object and work correctly regardless of what product is passed in.
 
+
+# Sample output
+
+    ===============================/
+          THRIFTCLOUD SHOP
+    ===============================
+    1. View All Items
+    2. Search Item
+    3. View Cart
+    4. Checkout
+    5. Exit
+    Choose an option: 1
+
+    ========= PRODUCT LIST =========
+
+    Item #1
+    ----------------------------------------
+    PRODUCT: Nirvana 'Nevermind' Tee
+    CATEGORY: Shirts
+    PRICE: 1800
+    DESCRIPTION: Vintage faded black band tee.
+    ----------------------------------------
+
+    Item #2
+    ----------------------------------------
+    PRODUCT: BAPE Camo Logo Tee
+    CATEGORY: Shirts
+    PRICE: 2500
+    DESCRIPTION: Classic A Bathing Ape shirt.
+    ----------------------------------------
+
+    Item #3
+    ----------------------------------------
+    PRODUCT: Coogi Style Sweater
+    CATEGORY: Shirts
+    PRICE: 3200
+    DESCRIPTION: Colorful textured knit sweater.
+    ----------------------------------------
+
+    Item #4
+    ----------------------------------------
+    PRODUCT: Carhartt Workwear Jacket
+    CATEGORY: Jackets
+    PRICE: 3500
+    DESCRIPTION: Vintage utility jacket.
+    ----------------------------------------
+
+    Item #5
+    ----------------------------------------
+    PRODUCT: Polo Japan Track Jacket
+    CATEGORY: Jackets
+    PRICE: 2800
+    DESCRIPTION: Full-zip jacket with patch.
+    ----------------------------------------
+
+    Item #6
+    ----------------------------------------
+    PRODUCT: Wide-Leg Denim Jeans
+    CATEGORY: Pants
+    PRICE: 1100
+    DESCRIPTION: Dark wash wide-leg jeans.
+    ----------------------------------------
+
+    Item #7
+    ----------------------------------------
+    PRODUCT: Brown Wide Trousers
+    CATEGORY: Pants
+    PRICE: 1000
+    DESCRIPTION: High-waisted trousers.
+    ----------------------------------------
+
+    Item #8
+    ----------------------------------------
+    PRODUCT: Adidas Track Skirt
+    CATEGORY: Pants
+    PRICE: 900
+    DESCRIPTION: Black skirt with 3 stripes.
+    ----------------------------------------
+
+    Item #9
+    ----------------------------------------
+    PRODUCT: PUMA Suede Sneakers
+    CATEGORY: Shoes
+    PRICE: 2000
+    DESCRIPTION: Classic suede shoes.
+    ----------------------------------------
+
+    Item #10
+    ----------------------------------------
+    PRODUCT: VANS Old Skool Black
+    CATEGORY: Shoes
+    PRICE: 1400
+    DESCRIPTION: Iconic low-top sneakers.
+    ----------------------------------------
+
+    Item #11
+    ----------------------------------------
+    PRODUCT: Onitsuka Tiger White
+    CATEGORY: Shoes
+    PRICE: 1250
+    DESCRIPTION: White sneakers with stripes.
+    ----------------------------------------
+
+    Item #12
+    ----------------------------------------
+    PRODUCT: Chrome Cross Necklace
+    CATEGORY: Accessories
+    PRICE: 1500
+    DESCRIPTION: Silver-tone pendant.
+    ----------------------------------------
+
+    Item #13
+    ----------------------------------------
+    PRODUCT: NY Yankees Cap
+    CATEGORY: Accessories
+    PRICE: 850
+    DESCRIPTION: Cream/brown cap.
+    ----------------------------------------
+
+    Item #14
+    ----------------------------------------
+    PRODUCT: Spider-Man Headphones
+    CATEGORY: Accessories
+    PRICE: 1800
+    DESCRIPTION: Black over-ear headphones.
+    ----------------------------------------
+    Enter item number to ADD TO CART (0 to go back): 3
+    Coogi Style Sweater added to cart!
+
+# Search Item
+
+     ===============================
+       THRIFTCLOUD SHOP
+    ===============================
+    1. View All Items
+    2. Search Item
+    3. View Cart
+    4. Checkout
+    5. Exit
+    Choose an option: 2
+    Enter search keyword: carhartt
+
+    ========= PRODUCT LIST =========
+
+    Item #1
+    ----------------------------------------
+    PRODUCT: Carhartt Workwear Jacket
+    CATEGORY: Jackets
+    PRICE: 3500
+    DESCRIPTION: Vintage utility jacket.
+    ----------------------------------------
+    Enter item number to ADD TO CART (0 to go back): 1
+    Carhartt Workwear Jacket added to cart!
+
+# View Cart
+
+
+    ===============================
+       THRIFTCLOUD SHOP
+    ===============================
+    1. View All Items
+    2. Search Item
+    3. View Cart
+    4. Checkout
+    5. Exit
+    Choose an option: 3
+    
+    =========== YOUR CART ===========
+    
+    Cart Item #1
+    ----------------------------------------
+    PRODUCT: Chrome Cross Necklace
+    CATEGORY: Accessories
+    PRICE: 1500
+    DESCRIPTION: Silver-tone pendant.
+    ----------------------------------------
+    
+    Cart Item #2
+    ----------------------------------------
+    PRODUCT: Spider-Man Headphones
+    CATEGORY: Accessories
+    PRICE: 1800
+    DESCRIPTION: Black over-ear headphones.
+    ----------------------------------------
+    TOTAL: 3300
+    
+    
+#Checkout
+
+    ===============================
+           THRIFTCLOUD SHOP
+    ===============================
+    1. View All Items
+    2. Search Item
+    3. View Cart
+    4. Checkout
+    5. Exit
+    Choose an option: 4
+    
+    ========== CHECKOUT ==========
+    - Chrome Cross Necklace : 1500
+    - Spider-Man Headphones : 1800
+    --------------------------------
+    TOTAL AMOUNT: 3300
+    --------------------------------
+    Confirm checkout? (yes/no): yes
+    Payment successful! Thank you for your purchase.
+
+
+
+#Exit
+
+    ===============================
+       THRIFTCLOUD SHOP
+    ===============================
+    1. View All Items
+    2. Search Item
+    3. View Cart
+    4. Checkout
+    5. Exit
+    Choose an option: 5
+    Thank you for visiting!
+
+
+
+
+# Acknowledgments
+To our CS 211 instructor, we offer our deepest gratitude for supporting us through every challenge this semester. Your patience, understanding, and dedication have guided us more than you know.
